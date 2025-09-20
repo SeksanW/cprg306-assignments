@@ -5,8 +5,8 @@ export default function StudentInfo() {
     <div>
       <p>Seksan Wangkhiree</p>
       <p>
-        <Link href="https://github.com/SeksanW">
-          https://github.com/SeksanW
+        <Link href="https://github.com/SeksanW/cprg306-assignments">
+          https://github.com/SeksanW/cprg306-assignments
         </Link>
       </p>
     </div>
