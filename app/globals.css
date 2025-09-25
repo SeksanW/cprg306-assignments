@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+main {
+  display: block;
+}
+p {
+  display: block;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
