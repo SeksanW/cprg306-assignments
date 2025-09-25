@@ -1,3 +1,4 @@
+import Item from "./item-list";
 
 export default function Item({item}){
 
