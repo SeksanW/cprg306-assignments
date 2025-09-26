@@ -5,12 +5,9 @@ export default function Page(){
     return(
         <main>
             <h1 className="text-4xl 
-            m-5 
             bold
             flex 
             justify-center 
-            p-5 
-            rounded-lg
             text-white ">Shopping List</h1>
             <ItemList />
         </main>
