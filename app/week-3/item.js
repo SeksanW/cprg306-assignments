@@ -5,7 +5,7 @@ export default function Item({ item }) {
         <li className="bg-slate-900
                     
 
-                    w-2xl
+                    
         
                     p-2
                     ">
