@@ -5,7 +5,7 @@ export default function Page(){
     return(
         <main>
             <h1 className="text-4xl 
-            bold
+            font-bold
             flex 
             justify-center 
             text-white ">Shopping List</h1>
