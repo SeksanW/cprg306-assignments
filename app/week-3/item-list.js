@@ -76,7 +76,9 @@ const item12 = {
 };
 
 return(
-    <ul className="mx-auto w-fit">
+    <ul className="mx-auto 
+                        space-y-4
+                        w-fit">
     <Item item={item1} />
     <Item item={item2} />
     <Item item={item3} />
