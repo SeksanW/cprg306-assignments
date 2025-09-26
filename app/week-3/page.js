@@ -4,7 +4,7 @@ import ItemList from "./item-list";
 export default function Page(){
     return(
         <main>
-            <h1 className="text-5xl 
+            <h1 className="text-4xl 
             m-5 
             bold
             flex 
