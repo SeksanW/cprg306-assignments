@@ -3,7 +3,7 @@ export default function Item({ item }) {
     let { name, quantity, category } = item;
     return (
         <li className="bg-gray-100  
-                    border border-gray-300 
+                    border-2
                     p-4
                     w-full
                     max-w-md

@@ -6,7 +6,7 @@ export default function Page(){
         <main className="flex flex-col items-center">
             <h1 className="text-5xl 
             m-5 
-            text-black ">Shopping List</h1>
+            text-blue-400 ">Shopping List</h1>
             <ItemList />
         </main>
     )
