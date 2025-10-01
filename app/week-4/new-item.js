@@ -34,7 +34,6 @@ return (
     <main className="flex items-center justify-center h-screen">
         <div className="bg-blue-100 w-80 h-32 rounded-2xl flex flex-col items-center justify-center px-6 shadow space-y-3">
         {}
-        <p className="text-gray-700 text-lg font-semibold">Quantity</p>
 
         {}
         <div className="flex items-center justify-between w-full px-6">
