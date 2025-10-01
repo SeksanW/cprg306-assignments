@@ -18,7 +18,7 @@ const decrement = () => {
 };
 
     const baseButton =
-    "w-10 h-10 flex items-center justify-center rounded text-white text-xl font-bold transition-colors duration-200";
+    "w-10 h-10 flex items-center justify-center text-white text-xl font-bold transition-colors duration-200";
 
 const incrementStyles =
     quantity >= 20
@@ -31,14 +31,14 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
 return (
-    <main className="flex justify-center">
+    <main className="flex  justify-center">
 
-        <div className="bg-blue-100 w-80 h-32 rounded-2xl flex flex-col items-center justify-center shadow">
+        <div className="bg-blue-100 w-80 h-32 rounded-2xl flex flex-col items-center justify-center px-6 shadow space-y-3">
         {}
 
         {}
         <div className="flex items-center justify-between w-full px-6">
-        <div className="w-16 h-12 flex items-center justify-center border-2 border-gray-400 bg-white text-lg font-bold text-gray-800">
+        <div className="w-16 h-12 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800">
             {quantity}
         </div>
 
