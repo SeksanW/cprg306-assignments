@@ -6,8 +6,7 @@ export default function Page() {
     return (
         <div className="flex items-center 
                         pt-1
-                        justify-center 
-                        bg-gray-50">
+                        justify-center">
             <NewItem />
         </div>
     );
