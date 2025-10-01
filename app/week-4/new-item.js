@@ -31,7 +31,14 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
 return (
-    <main className="flex items-center justify-center h-screen">
+    <main className="flex items-center justify-center">
+
+            <h1 className="text-4xl 
+            font-bold
+            flex 
+            justify-center"> 
+            </h1>
+
         <div className="bg-blue-100 w-80 h-32 rounded-2xl flex flex-col items-center justify-center px-6 shadow space-y-3">
         {}
 
