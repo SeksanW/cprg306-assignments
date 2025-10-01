@@ -1,48 +1,60 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-
+import { useState } from "react";
 
 export default function NewItem() {
 
-    // Setting Quantity
-    let [quantity, setQuantity] = useState(1);
-    let currentQuantity = quantity.valueOf();
+    const [quantity, setQuantity] = useState(1);
 
-    // Button Functions
-    const Increment = () => {
-        if (currentQuantity < 20) {
-            setQuantity(currentQuantity + 1)
-        };
+    const increment = () => {
+    if (quantity < 20) {
+        setQuantity(quantity + 1);
     }
+    };
 
-    const Decrement = () => {
-        if (currentQuantity > 1) {
-            setQuantity(currentQuantity - 1)
-        };
+    const decrement = () => {
+    if (quantity > 1) {
+        setQuantity(quantity - 1);
     }
+    };
 
-    // Button Styling
-    let incrementStyles = "bg-blue-500 hover:bg-blue-300 text-white px-5 py-1 m-2 rounded";
-    if (currentQuantity >= 20) {
-        incrementStyles = "bg-gray-500 text-white px-5 py-1 m-2 rounded"
-    }
+    const baseButton =
+    "px-5 py-1 m-2 rounded text-white transition-colors duration-200";
 
-    let decrementStyles = "bg-blue-500 hover:bg-blue-300 text-white px-5 py-1 m-2 rounded";
-    if (currentQuantity <= 1) {
-        decrementStyles = "bg-gray-500 text-white px-5 py-1 m-2 rounded"
-    }
+    const incrementStyles =
+    quantity >= 20
+        ? "bg-gray-500 cursor-not-allowed " + baseButton
+        : "bg-blue-500 hover:bg-blue-300 " + baseButton;
 
-    // Page Display
-    return(
-        <main>
-            <div className="bg-blue-100 w-40 h-20 rounded-2xl pl-4 m-4">
-                <p className="text-gray-700 mx-6">Quantity: {currentQuantity}</p>
-                <button onClick={Decrement}
-                        className={decrementStyles}>-</button>
-                <button onClick={Increment}
-                        className={incrementStyles}>+</button>
-            </div>
-        </main>
-    )
+    const decrementStyles =
+    quantity <= 1
+        ? "bg-gray-500 cursor-not-allowed " + baseButton
+        : "bg-blue-500 hover:bg-blue-300 " + baseButton;
+
+    return (
+    <main>
+        <div className="bg-blue-100 w-48 h-24 rounded-2xl flex flex-col justify-center items-center m-4 shadow">
+            <p className="text-gray-700 text-lg mb-2">Quantity: {quantity}</p>
+        <div>
+
+            <button
+            onClick={decrement}
+            disabled={quantity <= 1}
+            className={decrementStyles}
+            >
+            - 
+            </button>
+
+            <button
+            onClick={increment}
+            disabled={quantity >= 20}
+            className={incrementStyles}
+            >
+            +
+            </button>
+        
+        </div>
+        </div>
+    </main>
+    );
 }
