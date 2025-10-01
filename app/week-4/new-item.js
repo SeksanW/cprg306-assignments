@@ -32,10 +32,10 @@ export default function NewItem() {
         : "bg-blue-500 hover:bg-blue-300 " + baseButton;
 
     return (
-    <main>
-        <div className="bg-blue-100 w-48 h-24 rounded-2xl flex flex-col justify-center items-center m-4 shadow">
-            <p className="text-gray-700 text-lg mb-2">Quantity: {quantity}</p>
-        <div>
+    <main className="flex items-center justify-center h-screen">
+        <div className="bg-blue-100 w-80 h-24 rounded-2xl flex items-center justify-between px-6 shadow">
+        <div className="w-16 h-12 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800">
+        {quantity}
 
             <button
             onClick={decrement}
@@ -52,7 +52,6 @@ export default function NewItem() {
             >
             +
             </button>
-        
         </div>
         </div>
     </main>
