@@ -19,8 +19,7 @@ const decrement = () => {
 
     const baseButton =
     "w-10 h-10 flex items-center justify-center rounded text-white text-xl font-bold transition-colors duration-200";
-
-    //button styling for when a click is allowed or not
+//button styling for when a click is allowed or not
 const incrementStyles =
     quantity >= 20
         ? "bg-gray-500 cursor-not-allowed " + baseButton
@@ -34,7 +33,7 @@ const incrementStyles =
 return (
     <main className="flex justify-center">
         
-        <div className="bg-blue-100 w-45 h-10 flex flex-col items-center justify-center px-2">
+        <div className="bg-blue-100 w-45 h-20 flex flex-col items-center justify-center px-2 shadow">
         {}
 
         {}
