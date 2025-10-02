@@ -32,8 +32,8 @@ const incrementStyles =
 
 return (
     <main className="flex justify-center">
-
-        <div className="bg-blue-100 w-80 h-32 flex flex-col items-center justify-center px-6 shadow space-y-3">
+        
+        <div className="bg-blue-100 w-80 h-32 flex flex-col items-center justify-center px-2 shadow">
         {}
 
         {}
@@ -47,18 +47,15 @@ return (
                 onClick={decrement}
                 disabled={quantity <= 1}
                 className={decrementStyles}
-                >
-                -
-            </button>
+                > - </button>
+
             <button
                 onClick={increment}
                 disabled={quantity >= 20}
                 className={incrementStyles}
-                >
-                +
-                    </button>
-                </div>
-            </div>
+                > + </button>
+        </div>
+        </div>
         </div>
     </main>
 );
