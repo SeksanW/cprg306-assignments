@@ -38,7 +38,7 @@ return (
         <div className="w-16 h-12 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
             {quantity}
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 ml-4">
             <button
                 onClick={decrement}
                 disabled={quantity <= 1}
