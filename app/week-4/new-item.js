@@ -33,7 +33,7 @@ const incrementStyles =
 return (
     <main className="flex justify-center">
         
-        <div className="bg-blue-100 w-50 h-15 p-2 flex flex-col items-center justify-center px-2 shadow gap-4">
+        <div className="bg-blue-100 w-50 h-15 p-2 flex flex-col items-center justify-center px-2 shadow space-x-4">
         <div className="flex items-center justify-between w-full px-6">
         <div className="w-16 h-12 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
             {quantity}
