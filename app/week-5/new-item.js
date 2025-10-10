@@ -66,11 +66,11 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
     return(
-            <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-10 bg-gray-800 text-white p-6 rounded-3xl shadow-lg space-y-5">
+            <form onSubmit={handleSubmit} className="w-90 mx-auto mt-10 bg-white text-white p-6 rounded-3xl shadow-lg space-y-5">
                     <div className="my-2">
                         <input type="text"
                             placeholder="Item name" 
-                            className="w-full p-2 rounded-lg border border-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full p-2 rounded-lg border border-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required={true}/>
@@ -99,14 +99,12 @@ const incrementStyles =
         </div>
             <div className="flex space-x-2 ml-4">
                 <button
-                type="button"
                 onClick={decrement}
                 disabled={quantity <= 1}
                 className={decrementStyles}
                 > - </button>
 
                 <button
-                type="button"
                 onClick={increment}
                 disabled={quantity >= 20}
                 className={incrementStyles}
