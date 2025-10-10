@@ -77,16 +77,16 @@ const incrementStyles =
                     </div>
             <div className="flex items-center justify-between space-x-2">
             <div className="flex items-center space-x-2">
-            <div className="w-14 h-8 flex items-center justify-center border-2 border-black rounded bg-white text-lg font-bold text-gray-800 ">
-            {quantity}
-            </div>
+                <div className="w-14 h-8 flex items-center justify-center border-2 border-black rounded bg-white text-lg font-bold text-gray-800 ">
+                {quantity}
+
+                </div>
                 
                 <button
                 onClick={decrement}
                 disabled={quantity <= 1}
                 className={decrementStyles}
                 > - </button>
-
                 <button
                 onClick={increment}
                 disabled={quantity >= 20}
@@ -94,12 +94,11 @@ const incrementStyles =
                 > + </button>
                 </div>
 
-                    
-                        <label className="inline-block w-20"></label>
-                        <select
-                        className="w-35 p-2 rounded border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        required>
+                    <label className="inline-block w-20"></label>
+                    <select
+                    className="w-35 p-2 rounded border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    required>
                         <option value="produce">Produce</option>
                         <option value="dairy">Dairy</option>
                         <option value="bakery">Bakery</option>
@@ -111,10 +110,8 @@ const incrementStyles =
                         <option value="snacks">Snacks</option>
                         <option value="household">Household</option>
                         <option value="other">Other</option>
-                        </select>
-                    
+                    </select>
                 </div>
-
 
                 <button 
                 type="submit"
