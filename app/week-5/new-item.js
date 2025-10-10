@@ -77,7 +77,7 @@ const incrementStyles =
                             required={true}/>
                     </div>
                     <div className="my-2">
-                        <label className="inline-block w-20">Category: </label>
+                        <label className="inline-block w-20"></label>
                         <select 
                             className="border Border-white rounded bg-gray-700"
                             onChange={handleCategoryChange}
