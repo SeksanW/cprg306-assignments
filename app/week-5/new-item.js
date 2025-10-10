@@ -3,7 +3,6 @@
 import { useState } from "react"
 
 export default function NewItem() {
-
 const [quantity, setQuantity] = useState(1);
 const [name, setName] = useState("");
 const [category, setCategory] = useState("produce");
@@ -67,9 +66,8 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
     return(
-        <main className="flex justify-center mt-10">
-            <form onSubmit={handleSubmit} className="bg-gray-700 text-white w-80 p-6 rounded-3xl shadow-lg">
-                <div className="bg-gray-700 w-75 h-70 p-5 rounded-3xl m-5">
+        <form onSubmit={handleSubmit} className="bg-gray-700 text-white w-80 p-6 rounded-3xl shadow-lg mx-auto mt-10">
+                <div className="bg-gray-700 w-90 h-50 p-5 rounded-3xl m-5">
                     <div className="my-2">
                         <label className="inline-block w-15">Name: </label>
                         <input type="text" 
@@ -122,6 +120,5 @@ const incrementStyles =
                 >Add Item</button>
                 </div>
             </form>
-        </main>
     )
 }
