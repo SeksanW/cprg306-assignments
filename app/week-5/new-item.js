@@ -92,16 +92,10 @@ const incrementStyles =
                 className={incrementStyles}
                 > + </button>
                 </div>
-
-                <button 
-                type="submit"
-                className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
-                >Add Item</button>
-                
                         <div className="my-2">
                         <label className="inline-block w-20"></label>
                         <select
-                        className="w-full p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
+                        className="w-40 p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         required>
                         <option value="produce">Produce</option>
@@ -117,6 +111,10 @@ const incrementStyles =
                         <option value="other">Other</option>
                         </select>
                     </div>
+                <button 
+                type="submit"
+                className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
+                >Add Item</button>
             </form>
     )
 }
