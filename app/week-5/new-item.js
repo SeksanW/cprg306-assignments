@@ -75,7 +75,30 @@ const incrementStyles =
                             onChange={(e) => setName(e.target.value)}
                             required={true}/>
                     </div>
-                    <div className="my-2">
+
+            <div className="w-16 h-10 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
+            {quantity}
+            </div>
+            <div className="flex space-x-2 ml-4">
+                <button
+                onClick={decrement}
+                disabled={quantity <= 1}
+                className={decrementStyles}
+                > - </button>
+
+                <button
+                onClick={increment}
+                disabled={quantity >= 20}
+                className={incrementStyles}
+                > + </button>
+                </div>
+
+                <button 
+                type="submit"
+                className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
+                >Add Item</button>
+                
+                        <div className="my-2">
                         <label className="inline-block w-20"></label>
                         <select
                         className="w-full p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
@@ -94,28 +117,6 @@ const incrementStyles =
                         <option value="other">Other</option>
                         </select>
                     </div>
-
-            <div className="flex space-x-2 ml-4">
-                <button
-                onClick={decrement}
-                disabled={quantity <= 1}
-                className={decrementStyles}
-                > - </button>
-
-            <div className="w-16 h-10 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
-            {quantity}
-            </div>
-                <button
-                onClick={increment}
-                disabled={quantity >= 20}
-                className={incrementStyles}
-                > + </button>
-                </div>
-
-                <button 
-                type="submit"
-                className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
-                >Add Item</button>
             </form>
     )
 }
