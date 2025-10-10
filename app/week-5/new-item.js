@@ -66,21 +66,19 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
     return(
-        <form onSubmit={handleSubmit} className="bg-gray-700 text-white w-80 p-6 rounded-3xl shadow-lg mx-auto mt-10">
-                <div className="bg-gray-700 w-90 h-50 p-5 rounded-3xl m-5">
+            <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-10 bg-gray-800 text-white p-6 rounded-3xl shadow-lg space-y-5">
                     <div className="my-2">
-                        <label className="inline-block w-15">Name: </label>
-                        <input type="text" 
-                            className="border border-white rounded"
-                            onChange={handleNameChange}
+                        <input type="text"
+                            placeholder="Item name" 
+                            className="w-full p-2 rounded-lg border border-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
                             value={name}
+                            onChange={(e) => setName(e.target.value)}
                             required={true}/>
                     </div>
                     <div className="my-2">
                         <label className="inline-block w-20"></label>
                         <select
-                        className="w-full p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        value={category}
+                        className="w-full p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-400"                        value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         required>
                         <option value="produce">Produce</option>
@@ -99,14 +97,16 @@ const incrementStyles =
         <div className="w-16 h-10 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
             {quantity}
         </div>
-        <div className="flex space-x-2 ml-4">
-            <button
+            <div className="flex space-x-2 ml-4">
+                <button
+                type="button"
                 onClick={decrement}
                 disabled={quantity <= 1}
                 className={decrementStyles}
                 > - </button>
 
                 <button
+                type="button"
                 onClick={increment}
                 disabled={quantity >= 20}
                 className={incrementStyles}
@@ -117,7 +117,6 @@ const incrementStyles =
                 type="submit"
                 className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
                 >Add Item</button>
-                </div>
             </form>
     )
 }
