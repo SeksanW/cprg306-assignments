@@ -66,25 +66,20 @@ const incrementStyles =
         : "bg-blue-500 hover:bg-blue-400 " + baseButton;
 
     return(
-            <form onSubmit={handleSubmit} className="w-90 mx-auto mt-5 bg-white text-white p-6 rounded-3xl shadow-lg space-y-5">
+            <form onSubmit={handleSubmit} className="w-100 mx-auto mt-5 bg-white text-white p-5 border-black shadow-lg space-y-5">
                     <div className="my-2">
                         <input type="text"
                             placeholder="Item name" 
-                            className="w-full p-2 rounded-lg border border-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-black"
+                            className="w-full p-2 rounded border border-black text-black focus:outline-none focus:ring-2 focus:ring-black"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required={true}/>
                     </div>
-
             <div className="flex items-center justify-between space-x-2">
             <div className="flex items-center space-x-2">
-
-
-
-            <div className="w-16 h-10 flex items-center justify-center border-2 border-gray-400 rounded bg-white text-lg font-bold text-gray-800 ">
+            <div className="w-14 h-8 flex items-center justify-center border-2 border-black rounded bg-white text-lg font-bold text-gray-800 ">
             {quantity}
             </div>
-
                 
                 <button
                 onClick={decrement}
@@ -102,7 +97,7 @@ const incrementStyles =
                     
                         <label className="inline-block w-20"></label>
                         <select
-                        className="w-40 p-2 rounded-lg border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
+                        className="w-35 p-2 rounded border border-gray-400 bg-white text-black focus:outline-none focus:ring-2 focus:ring-black"                        value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         required>
                         <option value="produce">Produce</option>
@@ -123,7 +118,7 @@ const incrementStyles =
 
                 <button 
                 type="submit"
-                className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-400 active:bg-blue-600 transition"
+                className="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-400 active:bg-blue-600 transition"
                 >Add Item</button>
             </form>
     )
