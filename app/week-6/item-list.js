@@ -15,6 +15,14 @@ export default function ItemList() {
     }
 });
 
+    const groupedItems = itemsData.reduce((groups, item) => {
+    const category = item.category;
+    if (!groups[category]) groups[category] = [];
+    groups[category].push(item);
+    return groups; }, {});
+
+    const sortedCategories = Object.keys(groupedItems).sort();
+
 return (
     <div className="flex flex-col items-center mt-6 space-y-4">
     {}
