@@ -24,13 +24,13 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="w-96 mx-auto bold space-y-6 mt-4">
+    <div className="w-96 mx-auto space-y-6 mt-4">
     {}
     <div className="flex gap-2">
         <button
             onClick={() => setSortBy("name")}
             className={`px-2 py-4 rounded ${
-            sortBy === "name" ? " bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
+            sortBy === "name" ? "font-bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
         >
         Sort by Name
         </button>
@@ -38,7 +38,7 @@ return (
         <button
             onClick={() => setSortBy("category")}
             className={`px-2 py-4 rounded ${
-            sortBy === "category" ? "bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
+            sortBy === "category" ? "font-bold bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
         >
         Sort by Category
         </button>
@@ -46,7 +46,7 @@ return (
         <button
             onClick={() => setSortBy("group")}
             className={`px-2 py-4 rounded ${
-            sortBy === "group" ? " bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
+            sortBy === "group" ? " font-bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
         >
         Group by Category
         </button>
@@ -54,7 +54,7 @@ return (
 
     {}
     {sortBy === "group" ? (
-        <div className="space-y-2 bold">
+        <div className="space-y-2">
             {sortedCategories.map((category) => (
             <div key={category}>
                 <h2 className=" text-xl font-bold capitalize text-blue-400">
@@ -71,7 +71,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="mx-auto space-y-1 w-fit">
+        <ul className="mx-auto space-y-2 w-fit">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
