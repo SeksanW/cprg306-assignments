@@ -24,20 +24,20 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="flex flex-col items-center mt-6 space-y-4">
+    <div className="flex flex-col items-center mt-6 space-y-3">
     {}
     <div className="flex gap-4">
         <button
             onClick={() => setSortBy("name")}
-            className={`px-4 py-2 rounded ${
-            sortBy === "name" ? "bg-yellow-500 text-white" : "bg-gray-500"}`}
+            className={`px-4 py-4 rounded ${
+            sortBy === "name" ? "bold bg-yellow-500 text-white" : "bg-gray-500"}`}
         >
         Sort by Name
         </button>
 
         <button
             onClick={() => setSortBy("category")}
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-4 rounded ${
             sortBy === "category" ? "bg-yellow-500 text-white" : "bg-gray-500"}`}
         >
         Sort by Category
@@ -47,8 +47,8 @@ return (
 
         <button
             onClick={() => setSortBy("group")}
-            className={`px-4 py-2 rounded ${
-            sortBy === "group" ? "bg-blue-500 text-white" : "bg-gray-300"}`}
+            className={`px-4 py-4 rounded ${
+            sortBy === "group" ? " bg-yellow-500 text-white" : "bg-gray-500"}`}
         >
         Group by Category
         </button>
@@ -73,7 +73,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="mx-auto space-y-4 w-fit">
+        <ul className="mx-auto space-y-4 w-fit bg-white">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
