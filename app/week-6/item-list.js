@@ -26,10 +26,10 @@ export default function ItemList() {
 return (
     <div className="w-96 mx-auto space-y-4 mt-6">
     {}
-    <div className="flex gap-4">
+    <div className="flex gap-2">
         <button
             onClick={() => setSortBy("name")}
-            className={`px-4 py-4 rounded ${
+            className={`px-2 py-4 rounded ${
             sortBy === "name" ? "bold bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Sort by Name
@@ -37,7 +37,7 @@ return (
 
         <button
             onClick={() => setSortBy("category")}
-            className={`px-4 py-4 rounded ${
+            className={`px-2 py-4 rounded ${
             sortBy === "category" ? "bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Sort by Category
@@ -47,7 +47,7 @@ return (
 
         <button
             onClick={() => setSortBy("group")}
-            className={`px-4 py-4 rounded ${
+            className={`px-2 py-4 rounded ${
             sortBy === "group" ? " bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Group by Category
@@ -56,10 +56,10 @@ return (
 
     {}
     {sortBy === "group" ? (
-        <div className="space-y-6 bg-white">
+        <div className="space-y-2 bg-white bold">
             {sortedCategories.map((category) => (
             <div key={category}>
-                <h2 className=" text-xl font-bold capitalize text-white">
+                <h2 className=" text-xl font-bold capitalize text-blue-400">
                 {category}
                 </h2>
             <ul className="space-y-2">
