@@ -73,7 +73,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="bg-slate-800 rounded-xl p-4 space-y-3 ">
+        <ul className="mx-auto space-y-4 w-fit">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
