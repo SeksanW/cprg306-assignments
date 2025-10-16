@@ -24,13 +24,13 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="flex flex-col items-center mx-auto space-y-4 w-fit mt-6">
+    <div className="w-96 mx-auto space-y-4 mt-6">
     {}
     <div className="flex gap-4">
         <button
             onClick={() => setSortBy("name")}
             className={`px-4 py-4 rounded ${
-            sortBy === "name" ? "bold bg-yellow-500 text-white" : "bg-gray-500"}`}
+            sortBy === "name" ? "bold bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Sort by Name
         </button>
@@ -38,7 +38,7 @@ return (
         <button
             onClick={() => setSortBy("category")}
             className={`px-4 py-4 rounded ${
-            sortBy === "category" ? "bg-yellow-500 text-white" : "bg-gray-500"}`}
+            sortBy === "category" ? "bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Sort by Category
         </button>
@@ -48,7 +48,7 @@ return (
         <button
             onClick={() => setSortBy("group")}
             className={`px-4 py-4 rounded ${
-            sortBy === "group" ? " bg-yellow-500 text-white" : "bg-gray-500"}`}
+            sortBy === "group" ? " bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Group by Category
         </button>
@@ -56,10 +56,10 @@ return (
 
     {}
     {sortBy === "group" ? (
-        <div className="space-y-6">
+        <div className="space-y-6 bg-white">
             {sortedCategories.map((category) => (
             <div key={category}>
-                <h2 className="bg-white text-xl font-bold capitalize text-white">
+                <h2 className=" text-xl font-bold capitalize text-white">
                 {category}
                 </h2>
             <ul className="space-y-2">

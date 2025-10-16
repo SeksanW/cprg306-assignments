@@ -7,8 +7,7 @@ export default function Page(){
             <h1 className="text-4xl 
             font-bold
             flex 
-            justify-center
-            text-white ">Shopping List</h1>
+            justify-center">Shopping List</h1>
             <ItemList />
         </main>
     )
