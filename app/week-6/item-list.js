@@ -24,7 +24,7 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="flex flex-col items-center mt-6 space-y-3">
+    <div className="flex flex-col items-center mx-auto space-y-4 w-fit mt-6">
     {}
     <div className="flex gap-4">
         <button
@@ -59,7 +59,7 @@ return (
         <div className="space-y-6">
             {sortedCategories.map((category) => (
             <div key={category}>
-                <h2 className="text-xl font-bold capitalize text-white">
+                <h2 className="bg-white text-xl font-bold capitalize text-white">
                 {category}
                 </h2>
             <ul className="space-y-2">
@@ -73,7 +73,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="mx-auto space-y-4 w-fit bg-white">
+        <ul className="mx-auto space-y-4 w-fit ">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
