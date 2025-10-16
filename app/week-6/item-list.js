@@ -24,7 +24,7 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="w-96 mx-auto space-y-6 mt-4">
+    <div className="w-96 mx-auto bold space-y-6 mt-4">
     {}
     <div className="flex gap-2">
         <button
@@ -42,8 +42,6 @@ return (
         >
         Sort by Category
         </button>
-
-
 
         <button
             onClick={() => setSortBy("group")}
@@ -73,7 +71,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="mx-auto space-y-2 w-fit">
+        <ul className="mx-auto space-y-1 w-fit">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
