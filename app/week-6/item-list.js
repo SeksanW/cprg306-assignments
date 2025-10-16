@@ -24,13 +24,13 @@ export default function ItemList() {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="w-96 mx-auto space-y-4 mt-6">
+    <div className="w-96 mx-auto space-y-6 mt-4">
     {}
     <div className="flex gap-2">
         <button
             onClick={() => setSortBy("name")}
             className={`px-2 py-4 rounded ${
-            sortBy === "name" ? "bold bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
+            sortBy === "name" ? " bg-yellow-500 text-white" : "bg-gray-500 text-white"}`}
         >
         Sort by Name
         </button>
@@ -56,7 +56,7 @@ return (
 
     {}
     {sortBy === "group" ? (
-        <div className="space-y-2 bg-white bold">
+        <div className="space-y-2 bold">
             {sortedCategories.map((category) => (
             <div key={category}>
                 <h2 className=" text-xl font-bold capitalize text-blue-400">
@@ -73,7 +73,7 @@ return (
             ))}
         </div>
     ) : (
-        <ul className="mx-auto space-y-4 w-fit ">
+        <ul className="bg-slate-800 rounded-xl p-4 space-y-3 ">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
