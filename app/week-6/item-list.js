@@ -58,7 +58,7 @@ return (
     {sortBy === "group" ? (
         <div className="space-y-2 bold">
             {sortedCategories.map((category) => (
-<div className="bg-slate-800 rounded-xl p-4">
+<div key={category} className="bg-slate-800 rounded-xl p-4">
     <ul className="list-disc list-inside space-y-1">
     {groupedItems[category]
         .sort((a, b) => a.name.localeCompare(b.name))
