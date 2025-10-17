@@ -53,6 +53,7 @@ return (
     </div>
 
     {}
+    {sortBy === "group" ? (
     <div className="space-y-4">
         {sortedCategories.map((category) => (
             <div
@@ -72,11 +73,13 @@ return (
     </div>
     ))}
 </div>
+    ) : (
         <ul className="mx-auto space-y-2 w-fit">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
         </ul>
+    )}
     </div>
     );
 }
