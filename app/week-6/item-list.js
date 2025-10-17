@@ -53,30 +53,30 @@ return (
     </div>
 
     {}
-    {sortBy === "group" ? (
-        <div className="space-y-2">
-            {sortedCategories.map((category) => (
-            <div key={category}>
-                <h2 className=" text-xl font-bold capitalize text-blue-400">
-                {category}
-                </h2>
-            <ul className="space-y-2">
-                {groupedItems[category]
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((item) => (
-                    <Item key={item.id} item={item} />
-                    ))}
-            </ul>
-            </div>
+    <div className="space-y-4">
+        {sortedCategories.map((category) => (
+            <div
+                key={category}
+                className="bg-white rounded-xl p-4 shadow-md w-full"
+            >
+            <h2 className="text-xl font-bold capitalize text-blue-400 mb-3">
+            {category}
+            </h2>
+        <ul className="space-y-2 flex flex-col items-center">
+            {groupedItems[category]
+            . sort((a, b) => a.name.localeCompare(b.name))
+            .map((item) => (
+            <Item key={item.id} item={item} />
             ))}
-        </div>
-    ) : (
+        </ul>
+    </div>
+    ))}
+</div>
         <ul className="mx-auto space-y-2 w-fit">
             {sortedItems.map((item) => (
             <Item key={item.id} item={item} />
             ))}
         </ul>
-    )}
     </div>
     );
 }
