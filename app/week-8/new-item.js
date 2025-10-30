@@ -46,8 +46,8 @@ return (
     </div>
 
     <div className="flex flex-col gap-2">
-        <label className="font-semibold text-gray-800">Quantity (1–20)</label>
-        <p className="text-gray-700">Current: {quantity}</p>
+        <label className="font-semibold ">Quantity (1–20)</label>
+        <p className="text-gray-500">Current: {quantity}</p>
 
         <div className="flex items-center gap-4">
             <button
