@@ -39,7 +39,7 @@ return (
         <input
             type="text"
             placeholder="eg,. 4L milk"
-            className="w-full p-2 rounded border border-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="w-full p-2 rounded border border-gray-400  focus:outline-none focus:ring-2 focus:ring-blue-300"
             value={name}
             onChange={(e) => setName(e.target.value)} required
         />
@@ -95,7 +95,7 @@ return (
 
     <button
         type="submit"
-        className="p-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 rounded transition"
+        className="p-4 bg-green-700 hover:bg-green-900 font-bold py-2 rounded transition"
         >Add Item
     </button>
     
