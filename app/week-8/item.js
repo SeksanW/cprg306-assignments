@@ -1,6 +1,6 @@
 export default function Item({ item }) {
 
-    let { name, quantity, category } = item;
+    const { name, quantity, category } = item;
     return (
         <li 
         onClick={() => onSelect && onSelect(item)}
