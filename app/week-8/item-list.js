@@ -34,7 +34,7 @@ export default function ItemList({ onItemSelect }) {
             </div>
 
             {sortedItems.length === 0 && (
-                <p className="text-center text-gray-500">No meals found.</p>)}
+                <p className="text-center text-gray-300">No meals found.</p>)}
 
             <ul className="flex flex-wrap justify-center gap-3">
                 {sortedItems.map((item) => (
