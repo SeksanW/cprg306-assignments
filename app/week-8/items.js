@@ -2,7 +2,9 @@ export default function Item({ item }) {
 
     let { name, quantity, category } = item;
     return (
-        <li className="bg-slate-900
+        <li 
+        onClick={() => onSelect && onSelect(item)}
+        className="bg-slate-900
                     w-96
                     p-2
                     ">

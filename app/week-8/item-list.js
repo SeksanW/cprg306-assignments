@@ -4,7 +4,7 @@ import { useState } from "react";
 import Item from "./item";
 import itemsData from "./items.json";
 
-export default function ItemList() {
+export default function ItemList({ onItemSelect }) {
     const [sortBy, setSortBy] = useState("name");
 
     const sortedItems = [...itemsData].sort((a, b) => {
@@ -67,7 +67,7 @@ return (
             {groupedItems[category]
             . sort((a, b) => a.name.localeCompare(b.name))
             .map((item) => (
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} onSelect={onItemSelect} />
             ))}
         </ul>
     </div>
@@ -76,7 +76,7 @@ return (
     ) : (
         <ul className="mx-auto space-y-2 w-fit">
             {sortedItems.map((item) => (
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} onSelect={onItemSelect}/>
             ))}
         </ul>
     )}
