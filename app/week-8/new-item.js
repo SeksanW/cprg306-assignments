@@ -75,7 +75,7 @@ return (
     <div>
         <h1>Category</h1>
         <select
-            className="w-full p-2 rounded border text-black"
+            className="w-full p-2 rounded border bg-gray-500"
             value={category}
             onChange={(e) => setCategory(e.target.value)}>
 
