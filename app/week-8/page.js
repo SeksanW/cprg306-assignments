@@ -33,7 +33,7 @@ return (
                 </div>
 
                 <div>
-                    <div className="bg-white p-4 rounded">
+                    <div className=" p-4 rounded">
                         <MealIdeas ingredient={selectedItemName} />
                     </div>
                 </div>

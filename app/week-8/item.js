@@ -3,7 +3,7 @@ export default function Item({ item, onSelect }) {
     return (
     <li
         onClick={() => onSelect && onSelect(item)}
-        className="bg-white border p-2 rounded hover:shadow-md hover:bg-gray-100  cursor-pointer w-full">
+        className=" border p-2 rounded hover:shadow-md hover:bg-gray-100  cursor-pointer w-full">
             <h3>
                 {name}
             </h3>
