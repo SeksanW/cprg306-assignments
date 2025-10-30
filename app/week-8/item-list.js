@@ -24,9 +24,8 @@ export default function ItemList({ onItemSelect }) {
     const sortedCategories = Object.keys(groupedItems).sort();
 
 return (
-    <div className="w-116 mx-auto space-y-6 mt-3 px-8">
-    {}
-    <div className="flex gap-2">
+    <div className="w-full mx-auto space-y-6 mt-3 px-4">
+    <div className="flex flex-wrap gap-2 justify-center">
         <button
             onClick={() => setSortBy("name")}
             className={`px-2 py-4 rounded ${
@@ -52,7 +51,6 @@ return (
         </button>
     </div>
 
-    {}
     {sortBy === "group" ? (
     <div className="space-y-4">
         {sortedCategories.map((category) => (
