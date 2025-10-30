@@ -95,7 +95,7 @@ return (
 
     <button
         type="submit"
-        className="p-4 bg-green-700 hover:bg-green-900 font-bold py-2 rounded transition"
+        className="p-4 bg-green-400 hover:bg-green-700 font-bold py-2 rounded transition"
         >Add Item
     </button>
     
