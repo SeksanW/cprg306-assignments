@@ -1,83 +1,45 @@
-"use client";
-
 import { useState } from "react";
 import Item from "./item";
 import itemsData from "./items.json";
 
 export default function ItemList({ onItemSelect }) {
     const [sortBy, setSortBy] = useState("name");
-
     const sortedItems = [...itemsData].sort((a, b) => {
-    if (sortBy === "name") {
-    return a.name.localeCompare(b.name);
-    } else if (sortBy === "category") {
-    return a.category.localeCompare(b.category);
-    }
-});
+    if (sortBy === "name") return a.name.localeCompare(b.name);
+    if (sortBy === "category") return a.category.localeCompare(b.category);
+    return 0;
+    });
 
-    const groupedItems = itemsData.reduce((groups, item) => {
-    const category = item.category;
-    if (!groups[category]) groups[category] = [];
-    groups[category].push(item);
-    return groups; }, {});
+    return (
+        <div>
+            <div className=" mb-6">
+                <span className="font-semibold mr-2">Sort by:</span>
 
-    const sortedCategories = Object.keys(groupedItems).sort();
+                <button
+                    onClick={() => setSortBy("name")}
+                    className={`inline-block px-3 py-1 text-sm rounded-md font-medium transition  ${
+                    sortBy === "name"
+                        ? "bg-blue-500 text-white"
+                        : "text-gray-800 hover:bg-gray-200 bg-gray-200"}`}
+                    >Name
+                </button>
+                <button
+                    onClick={() => setSortBy("category")}
+                    className={`inline-block px-3 py-1 text-sm rounded-md font-medium transition ml-3 ${
+                    sortBy === "category"
+                        ? "bg-blue-500 text-white"
+                        :  "text-gray-800 hover:bg-gray-200 bg-gray-200"}`}
+                    >Category
+                </button>
+            </div>
 
-return (
-    <div className="w-full mx-auto space-y-6 mt-3 px-4">
-    <div className="flex flex-wrap gap-2 justify-center">
-        <button
-            onClick={() => setSortBy("name")}
-            className={`px-2 py-4 rounded ${
-            sortBy === "name" ? "font-bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
-        >
-        Sort by Name
-        </button>
+            {sortedItems.length === 0 && (
+                <p className="text-center text-gray-500">No meals found.</p>)}
 
-        <button
-            onClick={() => setSortBy("category")}
-            className={`px-2 py-4 rounded ${
-            sortBy === "category" ? "font-bold bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
-        >
-        Sort by Category
-        </button>
-
-        <button
-            onClick={() => setSortBy("group")}
-            className={`px-2 py-4 rounded ${
-            sortBy === "group" ? " font-bold bg-yellow-500 text-white" : "font-bold bg-gray-500 text-white"}`}
-        >
-        Group by Category
-        </button>
-    </div>
-
-    {sortBy === "group" ? (
-    <div className="space-y-4">
-        {sortedCategories.map((category) => (
-            <div
-                key={category}
-                className="bg-white rounded-xl p-4 shadow-md w-full"
-            >
-            <h2 className="text-xl font-bold capitalize text-blue-400 mb-3">
-            {category}
-            </h2>
-        <ul className="space-y-2 flex flex-col items-center">
-            {groupedItems[category]
-            . sort((a, b) => a.name.localeCompare(b.name))
-            .map((item) => (
-            <Item key={item.id} item={item} onSelect={onItemSelect} />
-            ))}
-        </ul>
-    </div>
-    ))}
-</div>
-    ) : (
-        <ul className="mx-auto space-y-2 w-fit">
-            {sortedItems.map((item) => (
-            <Item key={item.id} item={item} onSelect={onItemSelect}/>
-            ))}
-        </ul>
-    )}
-    </div>
+            <ul className="flex flex-wrap justify-center gap-3">
+                {sortedItems.map((item) => (
+                <Item key={item.id} item={item} onSelect={onItemSelect} />))}
+            </ul>
+        </div>
     );
 }

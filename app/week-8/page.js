@@ -1,41 +1,43 @@
 "use client";
 
-import { useState } from "react"; 
+import { useState } from "react";
 import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
 import NewItem from "./new-item";
 
 export default function Page() {
-    const [selectedItemName, setSelectedItemName] = useState("");
-    
-    function handleItemSelect(item) {
-        let cleanName = item.name
-            .split(",")[0]
-            .trim()
-            .replace(/[^\p{L}\p{N}\s]/gu, ""); 
-            setSelectedItemName(cleanName);
-    }
+const [selectedItemName, setSelectedItemName] = useState("");
+
+function handleItemSelect(item) {
+    const cleanName = item.name
+        .split(",")[0]
+        .trim()
+        .replace(/[^\p{L}\p{N}\s]/gu, "");
+    setSelectedItemName(cleanName);
+}
 
 return (
-    <main className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-    <h1 className="text-4xl font-bold mb-6 text-blue-600">Shopping List</h1>
+    <main className=" flex py-4">
+        <div className="w-full max-w-5xl mx-auto ">
+            <h1 className="font-bold mb-4 text-2xl">
+                Shopping List + Meal Ideas
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bor">
+                <div className="space-y-6">
+                    <div className="bg-white p-4 rounded-sm border-gray-300 border">
+                        <NewItem />
+                    </div>
+                    <div className="space-y-6">
+                        <ItemList onItemSelect={handleItemSelect} />
+                    </div>
+                </div>
 
-        <div className="flex flex-col md:flex-row gap-8 w-full max-w-5xl justify-center">
-        <div className="flex-1 space-y-6">
-        <div className="bg-white p-4 rounded-lg shadow-md">
-            <NewItem />
-        </div>
-
-        <div className="bg-white p-4 rounded-lg shadow-md">
-            <ItemList onItemSelect={handleItemSelect} /> 
-        </div>
-        </div>
-
-        <div className="flex-1">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-            <MealIdeas ingredient={selectedItemName} /> 
+                <div>
+                    <div className="bg-white p-4 rounded">
+                        <MealIdeas ingredient={selectedItemName} />
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </main>
 );

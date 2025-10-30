@@ -1,18 +1,14 @@
-"use client";
-
-export default function Item({ item }) {
+export default function Item({ item, onSelect }) {
     const { name, quantity, category } = item;
-    
     return (
-        <li 
-            onClick={() => {
-        if (onSelect) onSelect(item);}}
-        className="bg-white w-80 sm:w-96 p-3 rounded-lg shadow hover:shadow-lg hover:bg-blue-50 transition cursor-pointer"
-        >
-        <h3 className="text-xl font-semibold text-blue-600 capitalize">{name}</h3> 
-        <p className="text-gray-700 mt-1">
-        Buy {quantity} in {category}
-        </p>
+    <li
+        onClick={() => onSelect && onSelect(item)}
+        className="bg-white border p-2 rounded hover:shadow-md hover:bg-gray-100  cursor-pointer w-full">
+            <h3>
+                {name}
+            </h3>
+            <p>Quantity: {quantity}</p>
+            <p>Category: {category}</p>     
     </li>
     );
 
