@@ -9,7 +9,7 @@ export default function Page() {
         let cleanName = item.name
             .split(",")[0]
             .trim()
-            .replace(gu, ""); 
+            .replace(/[^\p{L}\p{N}\s]/gu, ""); 
 
     return(
         <main>
