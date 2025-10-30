@@ -24,7 +24,7 @@ return (
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bor">
                 <div className="space-y-6">
-                    <div className="bg-white p-4 rounded-sm border-gray-300 border">
+                    <div className=" p-4 rounded-sm border-gray-300 border">
                         <NewItem />
                     </div>
                     <div className="space-y-6">
