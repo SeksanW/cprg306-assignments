@@ -7,8 +7,9 @@ import { useUserAuth } from "./_utils/auth-context";
 export default function Page() {
     const { user, gitHubSignIn } = useUserAuth();
     const router = useRouter();
+
     useEffect(() => {
-    if (user?.uid) {
+    if (user) {
         router.push("/week-9/shopping-list");
     }
     }, [user, router]);
@@ -19,7 +20,9 @@ return (
         Week 9 - Authentication using Firebase
         </h1>
 
-        <button onClick={gitHubSignIn}>Sign In with Github</button>
+        {!user && (
+            <button onClick={gitHubSignIn}>Sign In with GitHub</button>
+        )}
     </div>
 );
 }
