@@ -49,10 +49,12 @@ useEffect(() => {
     async function load() {
         if (!ingredient) {
         setMeals([]); 
+        setSelectedMeal(null);
         return;
         }
         const data = await fetchMealIdeas(ingredient);
         setMeals(data);
+        setSelectedMeal(null);
     }
     load();
 }, [ingredient]);
@@ -90,8 +92,10 @@ return (
             {meals.map((meal) => (
             <li
                 key={meal.idMeal}
+                onClick={() => handleMealClick(meal)}
                 className=" border 1 rounded p-2 hover:shadow-md transition">
                 {meal.strMeal}
+                
             </li>))}
             </ul>
         )}
