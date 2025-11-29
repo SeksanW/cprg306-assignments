@@ -55,7 +55,7 @@ if (!user) {
 }
 
 return (
-    <main className="min-h-screen px-5 py-10">
+    <main className="px-5 py-10">
         <h1 className="text-4xl font-bold mb-8">Shopping List</h1>
     <div className="grid md:grid-cols-[21.25rem_1fr] gap-6">
         <div className="w-[21.25rem] pl-[10px] space-y-10">

@@ -32,12 +32,7 @@ return (
                 }`}>Category
             </button>
         </div>
-
-        {sortedItems.length === 0 && (
-            <p className="text-center text-gray-300">No items found.</p>
-        )}
-        
-        <ul className="flex flex-wrap justify-center gap-3">
+        <ul className=" justify-center gap-3 space-y-3 cursor-pointer">
         {sortedItems.map((item) => (
             <Item key={item.id} item={item} onSelect={onItemSelect} />
         ))}
