@@ -15,7 +15,6 @@ export default function ShoppingListPage() {
     const [items, setItems] = useState([]);
     const [selectedItemName, setSelectedItemName] = useState("");
 
-  // If not logged in, go back to landing page
 useEffect(() => {
     if (user === null) {
         router.push("/week-10");
@@ -32,7 +31,6 @@ async function loadItems() {
     }
 }
 
-  // load items when user becomes available
 useEffect(() => {
     if (user) {
         loadItems();
@@ -52,14 +50,13 @@ async function handleAddItem(item) {
     }
 }
 
-  // While auth state is resolving or redirecting
 if (!user) {
-    return null; // or a small "Loading..." if you prefer
+    return null;
 }
 
 return (
     <main className="min-h-screen px-5 py-10">
-        <h1 className="text-4xl font-bold mb-8">Shopping List App</h1>
+        <h1 className="text-4xl font-bold mb-8">Shopping List</h1>
     <div className="grid md:grid-cols-[21.25rem_1fr] gap-6">
         <div className="w-[21.25rem] pl-[10px] space-y-10">
             <NewItem onAddItem={handleAddItem} />

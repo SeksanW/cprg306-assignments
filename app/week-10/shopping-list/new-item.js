@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function NewItem() {
+export default function NewItem({ onAddItem }) {
 const [name, setName] = useState("");
 const [quantity, setQuantity] = useState(1);
 const [category, setCategory] = useState("produce");
@@ -20,6 +20,7 @@ const handleSubmit = (e) => {
     setName("");
     setQuantity(1);
     setCategory("produce");
+    onAddItem(item);
 };
 
 const baseButton =
@@ -43,8 +44,7 @@ return (
             onChange={(e) => setName(e.target.value)} required
         />
     </div>
-    
-    <div className="flex gap-3 items-center">
+    <div className="flex gap-3 items-center flex-wrap">
 
 <div className="flex items-center w-35 gap-3 border p-2 rounded">
     <p className="w-15">{quantity}</p>
