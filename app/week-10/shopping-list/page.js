@@ -63,7 +63,7 @@ return (
             <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
     
-        <div className="p-4 rounded bg-white shadow-sm">
+        <div className="p-4 rounded shadow-sm">
             <h2 className="text-xl font-semibold mb-4">Meal Ideas</h2>
             <MealIdeas ingredient={selectedItemName} />
         </div>
