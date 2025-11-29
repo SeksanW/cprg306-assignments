@@ -37,9 +37,7 @@ return (
         <h2 className="text-1xl font-bold ">
             Meal Ideas for (select an item)
         </h2>
-
         ):(
-
         <h2 className="text-1xl font-bold">
             Meal Ideas for &quot;{ingredient}&quot; 
         </h2> )}

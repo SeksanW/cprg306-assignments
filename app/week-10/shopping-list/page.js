@@ -6,67 +6,73 @@ import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
 import NewItem from "./new-item";
 import { useUserAuth } from "../_utils/auth-context";
+import { getItems, addItem } from "../_services/shopping-list-services";
 
-export default function Page() {
-    const { user, firebaseSignOut } = useUserAuth();
+export default function ShoppingListPage() {
+    const { user } = useUserAuth();
     const router = useRouter();
+
+    const [items, setItems] = useState([]);
     const [selectedItemName, setSelectedItemName] = useState("");
 
-if (user === null) {
-    return (
-        <main className="flex items-center justify-center h-screen">
-            <h1 className="text-2xl font-bold">
-                Please log in to view this page
-        </h1>
-        </main>
-    );
+  // If not logged in, go back to landing page
+useEffect(() => {
+    if (user === null) {
+        router.push("/week-10");
+    }
+}, [user, router]);
+
+async function loadItems() {
+    if (!user) return;
+    try {
+        const data = await getItems(user.uid);
+        setItems(data);
+    } catch (err) {
+        console.error("Error loading items:", err);
+    }
 }
 
-function handleLogout() {
-    firebaseSignOut().then(() => router.push("/week-9"));
-}
+  // load items when user becomes available
+useEffect(() => {
+    if (user) {
+        loadItems();
+    }
+}, [user]);
 
 function handleItemSelect(item) {
-    const cleanName = item.name
-        .split(",")[0]
-        .trim()
-        .replace(/[^\p{L}\p{N}\s]/gu, "");
-    setSelectedItemName(cleanName);
+    const cleanName = item.name.split(",")[0].replace(/[^\w\s]/g, "").trim();
+    setSelectedItemName(cleanName);}
+
+async function handleAddItem(item) {
+    try {
+        const id = await addItem(user.uid, item);
+        setItems((prev) => [...prev, { ...item, id }]);
+    } catch (err) {
+        console.error("Error adding item:", err);
+    }
 }
 
+  // While auth state is resolving or redirecting
+if (!user) {
+    return null; // or a small "Loading..." if you prefer
+}
 
 return (
-    <main className=" flex py-4">
-        <div className="w-full max-w-5xl mx-auto ">
-            <h1 className="font-bold mb-4 text-2xl">
-                Shopping List + Meal Ideas
-            </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bor">
-                <div className="space-y-6">
-                    <div className=" p-4 rounded-sm border-gray-300 border">
-                        <NewItem />
-                    </div>
-                    <div className="space-y-6">
-                        <ItemList onItemSelect={handleItemSelect} />
-                    </div>
-                </div>
-                
-                <div>
-                    <div className=" p-4 rounded">
-                        <MealIdeas ingredient={selectedItemName} />
-                    </div>
-                </div>
-            </div>
-
-            <div className="mt-6">
-                <button
-                    onClick={handleLogout}
-                    className="px-4 py-2 bg-red-500 text-white rounded"
-                >
-                    Logout
-                </button>
-            </div>
+    <main className="min-h-screen px-5 py-10">
+        <h1 className="text-4xl font-bold mb-8">Shopping List App</h1>
+    <div className="grid md:grid-cols-[21.25rem_1fr] gap-6">
+        <div className="w-[21.25rem] pl-[10px] space-y-10">
+            <NewItem onAddItem={handleAddItem} />
+            <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
+    
+        <div className="p-4 rounded bg-white shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">Meal Ideas</h2>
+            <MealIdeas ingredient={selectedItemName} />
+        </div>
+
+    </div>
     </main>
 );
+
 }
