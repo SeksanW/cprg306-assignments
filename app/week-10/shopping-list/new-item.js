@@ -16,7 +16,7 @@ const decrement = () => {
 const handleSubmit = (e) => {
     e.preventDefault();
     const item = { name, quantity, category };
-    alert(`Added item:\nName: ${item.name}\nQuantity: ${item.quantity}\nCategory: ${item.category}`);
+    alert(`Added item:\nName: ${item.name}\nQuantity ${item.quantity}\nCategory ${item.category}`);
     setName("");
     setQuantity(1);
     setCategory("produce");
