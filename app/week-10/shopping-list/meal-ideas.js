@@ -114,10 +114,9 @@ return (
     </ul>
 )}
 
-
-            {hasSelection && !hasMeals && (
-        <p className="text-gray-500">No meal found.</p> 
-    )}
+        {hasSelection && !hasMeals && (
+            <p className="text-gray-500">No meal found.</p> 
+        )}
     </div>
 );
 }

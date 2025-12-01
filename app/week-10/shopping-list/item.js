@@ -4,7 +4,6 @@ export default function Item({ item, onSelect }) {
     <li
         onClick={() => onSelect && onSelect(item)}
         className="
-
     border
     p-3
     cursor-pointer
