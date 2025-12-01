@@ -31,6 +31,12 @@ async function loadItems() {
     }
 }
 
+useEffect(() => {
+    if (user) {
+        loadItems();
+    }
+}, [user]);
+
 function handleItemSelect(item) {
     const cleanName = item.name.split(",")[0].replace(/[^\w\s]/g, "").trim();
     setSelectedItemName(cleanName);}
