@@ -21,11 +21,15 @@ useEffect(() => {
     }
 }, [user, router]);
 
-useEffect(() => {
-    if (user) {
-        loadItems();
+async function loadItems() {
+    if (!user) return;
+    try {
+        const data = await getItems(user.uid);
+        setItems(data);
+    } catch (err) {
+        console.error("Error loading items:", err);
     }
-}, [user]);
+}
 
 function handleItemSelect(item) {
     const cleanName = item.name.split(",")[0].replace(/[^\w\s]/g, "").trim();
